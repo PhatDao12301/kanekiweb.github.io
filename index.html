@@ -50,11 +50,11 @@
     <section class="main">
         <img src="https://avatars.githubusercontent.com/u/22284958?v=4" alt="" srcset="">
         <span>It's me, your randomizer</span>
-        <input name="randomInput" type="number" id="input" value="1000"/>
+        <input name="randomInput" type="number" id="input" value="1000" />
         <button type="button" class="btn btn-light" onclick="myFunction()">Click to get your random numbre</button>
-        <p>Random result:
+        <p>Random result:</p>
         <p id="randomResult"></p>
-        </p>
+        <button onclick="myFunctionCopy()">Copy</button>
         <ul>
             <!-- <li><a target="_blank" href="https://discord.gg/JuEeGweHrb"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/KanekiWeb"><i class="fab fa-github"></i></a></li>
@@ -66,7 +66,7 @@
         function myFunction() {
             var input = document.getElementById("input").value;
             // Returns a random integer from 1 to 1000:
-            if(input == null) input = 1000;
+            if (input == null) input = 1000;
             var randomNumber = Math.floor(Math.random() * input) + 1;
             console.log('the randome number:', randomNumber);
             if ((randomNumber ^ 1) == (randomNumber + 1))
@@ -74,6 +74,21 @@
                 return document.getElementById("randomResult").innerHTML = randomNumber;
             else //odd
                 return document.getElementById("randomResult").innerHTML = randomNumber + 1;
+        }
+
+        function myFunctionCopy() {
+            // Get the text field
+            var copyText = document.getElementById("randomResult").innerHTML;
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Copied the text: " + copyText.value);
         }
     </script>
 </body>
