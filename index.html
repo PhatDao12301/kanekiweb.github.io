@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/22284958?v=4">
-    
+
     <!-- Title -->
     <title>some Random things</title>
 
@@ -14,11 +15,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Javascript -->
-    
+
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
 
 </head>
+
 <body>
 
     <header>
@@ -39,8 +43,10 @@
     <section class="main">
         <img src="https://avatars.githubusercontent.com/u/22284958?v=4" alt="" srcset="">
         <span>It's me, your randomizer</span>
-        <p class="custom-p">Click to get your random numbre</p>
-        <p>Random result: <p id="randomResult"></p></p>
+        <button type="button" onclick="myFunction()">Click to get your random numbre</button>
+        <p>Random result:
+        <p id="randomResult"></p>
+        </p>
         <ul>
             <!-- <li><a target="_blank" href="https://discord.gg/JuEeGweHrb"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/KanekiWeb"><i class="fab fa-github"></i></a></li>
@@ -49,16 +55,18 @@
     </section>
 
     <script>
+        function myFunction() {       
         // Returns a random integer from 1 to 10:
         var randomNumber = Math.floor(Math.random() * 1000) + 1;
         console.log('the randome number:', randomNumber);
-        
 
         if ((randomNumber ^ 1) == (randomNumber + 1))
-        //even
-        document.getElementById("randomResult").innerHTML = randomNumber;
+            //even
+            return document.getElementById("randomResult").innerHTML = randomNumber;
         else //odd
-        document.getElementById("randomResult").innerHTML = randomNumber + 1;
+            return document.getElementById("randomResult").innerHTML = randomNumber + 1;
+        }
     </script>
 </body>
+
 </html>
