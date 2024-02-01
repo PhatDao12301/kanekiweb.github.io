@@ -54,7 +54,12 @@
         <button type="button" class="btn btn-light" onclick="myFunction()">Click to get your random numbre</button>
         <p>Random result:</p>
         <p id="randomResult"></p>
-        <button onclick="myFunctionCopy()" type="button" class="btn btn-warning">Copy</button>
+        <div class="tooltip">
+            <button onclick="myFunctionCopy()" type="button" class="btn btn-warning" onmouseout="outFunc()">
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                Copy
+            </button>
+        </div>
         <ul>
             <!-- <li><a target="_blank" href="https://discord.gg/JuEeGweHrb"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/KanekiWeb"><i class="fab fa-github"></i></a></li>
@@ -81,14 +86,19 @@
             var copyText = document.getElementById("randomResult").innerHTML;
 
             // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
+            // copyText.select();
+            // copyText.setSelectionRange(0, 99999); // For mobile devices
 
             // Copy the text inside the text field
             navigator.clipboard.writeText(copyText.value);
 
             // Alert the copied text
             alert("Copied the text: " + copyText.value);
+        }
+
+        function outFunc() {
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copy to clipboard";
         }
     </script>
 </body>
