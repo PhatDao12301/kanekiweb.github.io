@@ -50,6 +50,7 @@
     <section class="main">
         <img src="https://avatars.githubusercontent.com/u/22284958?v=4" alt="" srcset="">
         <span>It's me, your randomizer</span>
+        <input name="randomInput" type="number" id="input" value="1000"/>
         <button type="button" class="btn btn-light" onclick="myFunction()">Click to get your random numbre</button>
         <p>Random result:
         <p id="randomResult"></p>
@@ -63,10 +64,11 @@
 
     <script>
         function myFunction() {
+            var input = document.getElementById("input").value;
             // Returns a random integer from 1 to 1000:
-            var randomNumber = Math.floor(Math.random() * 1000) + 1;
+            if(input == null) input = 1000;
+            var randomNumber = Math.floor(Math.random() * input) + 1;
             console.log('the randome number:', randomNumber);
-
             if ((randomNumber ^ 1) == (randomNumber + 1))
                 //even
                 return document.getElementById("randomResult").innerHTML = randomNumber;
